@@ -1,0 +1,11 @@
+{
+  "name": "server",
+  "version": "0.0.1",
+  "description": "express koa boilerplate",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "2-one-week",
+  "license": "ISC"
+}

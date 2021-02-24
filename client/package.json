@@ -1,0 +1,11 @@
+{
+  "name": "client",
+  "version": "0.0.1",
+  "description": "react typescript graphql boilerplate",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "2-one-week",
+  "license": "ISC"
+}
