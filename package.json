@@ -13,7 +13,9 @@
     "lint:server": "cd server && npm run lint",
     "lint:client": "cd client && npm run lint",
     "test:server": "cd server && npm run test:clear && npm run test",
-    "test:client": "cd client && npm run test:clear && npm run test"
+    "test:client": "cd client && npm run test:clear && npm run test",
+    "postinstall": "husky install",
+    "precommit": "lint-staged"
   },
   "repository": {
     "type": "git",
@@ -46,7 +48,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run check-types:server && npm run check-types:client && lint-staged",
+      "pre-commit": "npm run check-types:server && npm run check-types:client && npx lint-staged",
       "pre-push": "npm run lint:server && npm run lint:client && npm run test:server && npm run test:client"
     }
   }
