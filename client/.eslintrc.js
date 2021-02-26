@@ -7,9 +7,9 @@ module.exports = {
   rules: {
     'react/prop-types': 'off',
     'react/display-name': 'off',
-    'react/jsx-curly-spacing': [
-      'error',
-      { when: 'always', allowMultiline: false },
+    'react/jsx-filename-extension': [
+      2,
+      { extensions: ['.js', '.jsx', '.ts', '.tsx'] },
     ],
   },
   settings: {
@@ -17,4 +17,4 @@ module.exports = {
       version: 'detect',
     },
   },
-}
+};
