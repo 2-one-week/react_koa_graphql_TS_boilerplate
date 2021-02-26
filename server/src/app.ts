@@ -1,19 +1,44 @@
-import Koa from 'koa'
-import Router from 'koa-router'
-import bodyParser from 'koa-bodyParser'
+import Koa from 'koa';
+import Router from 'koa-router';
+import bodyParser from 'koa-bodyParser';
+import cors from '@koa/cors';
+import { ApolloServer } from 'apollo-server-koa';
 
-const app = new Koa()
-const router = new Router()
-const port: number = 3000
+const GRAPHQL_ENDPOINT = '/graphql';
 
-app.use(bodyParser())
+class App {
+  public server: Koa;
+  public router: Router;
+  // private apolloServer: ApolloServer;
 
-router.get('/', async (ctx) => {
-  ctx.body = 'Hello World!'
-})
+  constructor() {
+    this.server = new Koa();
+    this.router = new Router();
+    // this.apolloServer = new ApolloServer({});
+    this.middleware();
+    this.setRouter();
+  }
 
-app.use(router.routes())
+  private middleware() {
+    const corsOptions = {
+      credentials: true,
+    };
+    this.server.use(bodyParser());
+    this.server.use(cors(corsOptions));
+    /*
+    this.apolloServer.applyMiddleware({
+      app: this.server,
+      path: GRAPHQL_ENDPOINT,
+      cors: corsOptions,
+    });
+    */
+  }
 
-app.listen(port, () => {
-  console.log(`Koa server is listening on port ${port}`)
-})
+  private setRouter() {
+    this.router.get('/', (ctx) => {
+      ctx.body = 'hello world';
+    });
+  }
+}
+
+export default new App();
