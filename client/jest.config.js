@@ -1,5 +1,10 @@
 module.exports = {
   preset: 'ts-jest',
+  globals: {
+    'ts-jest': {
+      isolatedModules: false,
+    },
+  },
   moduleFileExtensions: ['ts', 'js', 'tsx', 'jsx', 'json'],
   transform: {
     '^.+\\.(ts|tsx)$': 'babel-jest',
