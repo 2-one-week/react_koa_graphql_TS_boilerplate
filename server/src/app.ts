@@ -1,6 +1,6 @@
 import Koa from 'koa';
 import Router from 'koa-router';
-import bodyParser from 'koa-bodyParser';
+import bodyParser from 'koa-bodyparser';
 import cors from '@koa/cors';
 import { ApolloServer } from 'apollo-server-koa';
 
@@ -8,6 +8,7 @@ const GRAPHQL_ENDPOINT = '/graphql';
 
 class App {
   public server: Koa;
+
   public router: Router;
   // private apolloServer: ApolloServer;
 
