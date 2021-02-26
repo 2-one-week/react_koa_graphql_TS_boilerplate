@@ -4,7 +4,10 @@
   "description": "react, express, koa, mongodb boilerplate for oneweek",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "server:dev": "make server-dev",
+    "server:prod": "make server-prod",
+    "client:dev": "make client-dev",
+    "client:prod": "make client-prod"
   },
   "repository": {
     "type": "git",
@@ -22,6 +25,7 @@
     "eslint": "^7.20.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-plugin-import": "^2.22.1",
+    "lint-staged": "^10.5.4",
     "typescript": "^4.2.2"
   }
 }
